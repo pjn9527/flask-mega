@@ -1,0 +1,90 @@
+2025-06-27 06:57:36,554 ERROR: Exception on /follow/susan [POST] [in C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: followers.follower_id, followers.followed_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\routes.py", line 121, in follow
+    db.session.commit()
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4345, in flush
+    self._flush(objects)
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4480, in _flush
+    with util.safe_reraise():
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4441, in _flush
+    flush_context.execute()
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 591, in execute
+    self.dependency_processor.process_saves(uow, states)
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\orm\dependency.py", line 1197, in process_saves
+    self._run_crud(
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\orm\dependency.py", line 1260, in _run_crud
+    connection.execute(statement, secondary_insert)
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: followers.follower_id, followers.followed_id
+[SQL: INSERT INTO followers (follower_id, followed_id) VALUES (?, ?)]
+[parameters: (1, 2)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-06-27 07:10:39,441 INFO: Microblog startup [in C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\__init__.py:44]
+2025-06-27 07:21:32,152 INFO: Microblog startup [in C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\__init__.py:44]
+2025-06-27 07:23:06,300 INFO: Microblog startup [in C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\__init__.py:44]
+2025-06-27 07:23:11,814 INFO: Microblog startup [in C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\__init__.py:44]
+2025-06-27 07:23:16,696 INFO: Microblog startup [in C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\__init__.py:44]
