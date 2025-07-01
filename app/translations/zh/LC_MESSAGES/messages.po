@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-07-01 02:24+0800\n"
+"POT-Creation-Date: 2025-07-02 02:34+0800\n"
 "PO-Revision-Date: 2025-06-29 02:15+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: app/__init__.py:23
+#: app/__init__.py:25
 msgid "Please log in to access this page."
 msgstr "请登录后访问此页面。"
 
-#: app/email.py:16
+#: app/email.py:23
 msgid "[Microblog] Reset Your Password"
 msgstr "[微博客] 重设您的密码"
 
@@ -89,7 +89,7 @@ msgstr "用户"
 
 #: app/forms.py:81
 msgid "Message"
-msgstr ""
+msgstr "信息"
 
 #: app/routes.py:29
 msgid "Your post is now live!"
@@ -134,14 +134,22 @@ msgstr "请查收邮件获取密码重置指引"
 msgid "Your password has been reset."
 msgstr "密码已重置。"
 
-#: app/routes.py:279
+#: app/routes.py:281
 #, fuzzy
 msgid "Your message has been sent."
 msgstr "密码已重置。"
 
-#: app/routes.py:282
+#: app/routes.py:284
 msgid "Send Message"
-msgstr ""
+msgstr "发送消息"
+
+#: app/routes.py:324
+msgid "An export task is currently in progress"
+msgstr "导出任务正在进行中"
+
+#: app/routes.py:326
+msgid "Exporting posts..."
+msgstr "正在导出帖子..."
 
 #: app/templates/404.html:4
 msgid "Not Found"
@@ -166,7 +174,7 @@ msgstr "%(username)s 于 %(when)s 发布"
 
 #: app/templates/_post.html:28
 msgid "Translate"
-msgstr ""
+msgstr "翻译"
 
 #: app/templates/base.html:9
 msgid "Welcome to Microblog"
@@ -186,7 +194,7 @@ msgstr "登录"
 
 #: app/templates/base.html:47 app/templates/messages.html:4
 msgid "Messages"
-msgstr ""
+msgstr "消息"
 
 #: app/templates/base.html:57
 msgid "Profile"
@@ -206,12 +214,12 @@ msgid "Hi, %(username)s!"
 msgstr "您好，%(username)s！"
 
 #: app/templates/index.html:16 app/templates/search.html:12
-#: app/templates/user.html:44
+#: app/templates/user.html:47
 msgid "Newer posts"
 msgstr "更新的动态"
 
 #: app/templates/index.html:21 app/templates/search.html:17
-#: app/templates/user.html:49
+#: app/templates/user.html:52
 msgid "Older posts"
 msgstr "更早的动态"
 
@@ -251,12 +259,12 @@ msgstr "密码重置"
 
 #: app/templates/search.html:4
 msgid "Search Results"
-msgstr ""
+msgstr "搜索结果"
 
 #: app/templates/send_message.html:5
 #, python-format
 msgid "Send Message to %(recipient)s"
-msgstr ""
+msgstr "发送消息给 %(recipient)s"
 
 #: app/templates/user.html:8
 msgid "User"
@@ -280,15 +288,20 @@ msgstr "关注 %(count)d 人"
 msgid "Edit your profile"
 msgstr "编辑个人资料"
 
-#: app/templates/user.html:20 app/templates/user_popup.html:15
+#: app/templates/user.html:17
+#, fuzzy
+msgid "Export your posts"
+msgstr "忘记密码？"
+
+#: app/templates/user.html:23 app/templates/user_popup.html:15
 msgid "Follow"
 msgstr "关注"
 
-#: app/templates/user.html:27 app/templates/user_popup.html:22
+#: app/templates/user.html:30 app/templates/user_popup.html:22
 msgid "Unfollow"
 msgstr "取消关注"
 
-#: app/templates/user.html:32
+#: app/templates/user.html:35
 msgid "Send private message"
-msgstr ""
+msgstr "发送私人消息"
 

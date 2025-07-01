@@ -11,6 +11,8 @@ import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 import os
 
+
+
 def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 

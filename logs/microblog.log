@@ -1,95 +1,113 @@
-2025-07-01 02:37:32,184 ERROR: Exception on / [GET] [in C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py:875]
+2025-07-01 21:03:53,064 ERROR: Exception on /login [POST] [in /home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/flask/app.py:875]
 Traceback (most recent call last):
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\routes.py", line 40, in index
-    return render_template(
-           ^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\templates\index.html", line 2, in top-level template code
-    {% import "bootstrap_wtf.html" as wtf %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\templates\base.html", line 135, in top-level template code
-    const response = await fetch('{{ url_for('main.notifications') }}?since=' + since);
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'main.notifications'. Did you mean 'notifications' instead?
-2025-07-01 02:38:01,283 INFO: Microblog startup [in C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\__init__.py:62]
-2025-07-01 02:38:22,101 ERROR: Exception on /user/panjiannan [GET] [in C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py:875]
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
     rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
     rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\routes.py", line 105, in user
-    return render_template('user.html',
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\templates\user.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\templates\base.html", line 75, in top-level template code
-    {% block content %}{% endblock %}
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\templates\user.html", line 32, in block 'content'
-    <p><a href="{{ url_for('main.send_message', recipient=user.username) }}">{{ _('Send private message') }}</a></p>
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\57671.DESKTOP-U9QCETA\desktop\flask mega\venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'main.send_message' with values ['recipient']. Did you mean 'send_message' instead?
-2025-07-01 02:39:23,530 INFO: Microblog startup [in C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\__init__.py:62]
-2025-07-01 16:22:27,899 INFO: Microblog startup [in C:\Users\57671.DESKTOP-U9QCETA\Desktop\flask mega\app\__init__.py:62]
+  File "/home/pjn9527/flask-mega/app/routes.py", line 55, in login
+    user = db.session.scalar(sa.select(User).where(User.username == form.username.data))
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 1840, in scalar
+    return self._proxied.scalar(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2413, in scalar
+    return self._execute_internal(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1415, in execute
+    return meth(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id, user.username, user.email, user.password_hash, user.about_me, user.last_seen, user.last_message_read_time 
+FROM user 
+WHERE user.username = ?]
+[parameters: ('panjiannan',)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-01 21:04:24,615 INFO: Microblog startup [in /home/pjn9527/flask-mega/app/__init__.py:62]
+2025-07-01 21:04:35,118 INFO: Microblog startup [in /home/pjn9527/flask-mega/app/__init__.py:62]
+2025-07-01 21:04:44,162 INFO: Microblog startup [in /home/pjn9527/flask-mega/app/__init__.py:62]
+2025-07-01 21:04:47,095 INFO: Microblog startup [in /home/pjn9527/flask-mega/app/__init__.py:62]
+2025-07-01 21:11:11,727 INFO: Microblog startup [in /home/pjn9527/flask-mega/app/__init__.py:62]
+2025-07-01 21:11:17,445 ERROR: Exception on /login [POST] [in /home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/pjn9527/flask-mega/app/routes.py", line 55, in login
+    user = db.session.scalar(sa.select(User).where(User.username == form.username.data))
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/orm/scoping.py", line 1840, in scalar
+    return self._proxied.scalar(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2413, in scalar
+    return self._execute_internal(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1415, in execute
+    return meth(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/pjn9527/flask-mega/.venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id, user.username, user.email, user.password_hash, user.about_me, user.last_seen, user.last_message_read_time 
+FROM user 
+WHERE user.username = ?]
+[parameters: ('susan',)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-02 01:27:53,220 INFO: Microblog startup [in /home/pjn9527/flask-mega/./app/__init__.py:62]
+2025-07-02 01:32:53,022 INFO: Microblog startup [in /home/pjn9527/flask-mega/./app/__init__.py:62]
+2025-07-02 01:36:48,603 INFO: Microblog startup [in /home/pjn9527/flask-mega/./app/__init__.py:62]
+2025-07-02 02:22:43,891 INFO: Microblog startup [in /home/pjn9527/flask-mega/./app/__init__.py:70]
+2025-07-02 02:34:42,098 INFO: Microblog startup [in /home/pjn9527/flask-mega/./app/__init__.py:70]
+2025-07-02 02:42:10,005 INFO: Microblog startup [in /home/pjn9527/flask-mega/./app/__init__.py:70]

@@ -9,6 +9,7 @@ from flask_login import UserMixin
 from hashlib import md5
 from time import time
 import jwt, json
+from flask import current_app
 
 
 followers = sa.Table(
@@ -47,6 +48,7 @@ class User(UserMixin, db.Model):
     )
     
     notifications: so.WriteOnlyMapped['Notification'] = so.relationship(back_populates='user')
+
 
     # 用户正在关注的人
     following: so.WriteOnlyMapped['User'] = so.relationship(
@@ -142,6 +144,7 @@ class User(UserMixin, db.Model):
         n = Notification(name=name, payload_json=json.dumps(data), user=self)
         db.session.add(n)
         return n
+
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
@@ -246,3 +249,4 @@ class Notification(db.Model):
 
     def get_data(self):
         return json.loads(str(self.payload_json))
+
