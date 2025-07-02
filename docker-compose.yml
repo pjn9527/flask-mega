@@ -1,0 +1,58 @@
+
+
+services:
+  microblog:
+    build:
+      context: .            # 构建上下文：项目根目录
+      dockerfile: Dockerfile
+    image: microblog:latest
+    command: ["gunicorn", "microblog:app", "--bind", "0.0.0.0:5000", "--workers", "2"]
+    ports:
+      - "8000:5000"
+    depends_on:
+      - elasticsearch
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+    networks:
+      microblog-network:
+        aliases:
+          - elasticsearch
+    env_file:
+      - .env
+
+
+
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - microblog-network
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.1
+    environment:
+      discovery.type: single-node
+      xpack.security.enabled: "false"
+    ports:
+      - "9200:9200"
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:9200 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - microblog-network
+
+
+networks:
+  microblog-network:
+    external: true
+
+volumes:
+  db-data:
+  es-data:

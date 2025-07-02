@@ -1,4 +1,4 @@
-# 安全忽略规则
+# 安全忽略
 .env
 *.env
 .env.*
@@ -6,24 +6,40 @@ secrets/
 config/credentials.*
 instance/
 
-# Python 忽略
+# Python 缓存 & 发行
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 *.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+wheels/
+pip-wheel-metadata/
+*.whl
+
+# 虚拟环境
 venv/
 env/
 .venv/
 
-# 系统文件
-.DS_Store
-Thumbs.db
+# 测试 & 覆盖
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
 
-# IDE 文件
-.vscode/
-.idea/
+# Flask 翻译
+**/messages.po
+**/messages.mo
 
-# 数据文件
+# 日志文件
+*.log
+debug.log
+
+# SQLite & 数据文件
 *.sqlite3
 *.db
 *.dump
@@ -31,3 +47,21 @@ Thumbs.db
 # Elasticsearch 数据
 data/
 esdata/
+
+# Docker Compose 本地 override
+docker-compose.override.yml
+
+# IDE & 编辑器
+.vscode/
+.idea/
+
+# C 扩展 & 二进制
+*.so
+*.dylib
+*.dll
+
+# 操作系统
+.DS_Store
+.AppleDouble
+Thumbs.db
+ehthumbs.db
