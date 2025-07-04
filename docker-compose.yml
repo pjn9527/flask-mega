@@ -9,8 +9,8 @@ services:
     command: ["gunicorn", "microblog:app", "--bind", "0.0.0.0:5000", "--workers", "2"]
     ports:
       - "8000:5000"
-    depends_on:
-      - elasticsearch
+#    depends_on:
+ #     - elasticsearch
     environment:
       - ELASTICSEARCH_URL=http://elasticsearch:9200
     networks:
