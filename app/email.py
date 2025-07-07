@@ -7,7 +7,7 @@ from flask_babel import _
 
 def send_password_reset_email(user):
     token = user.get_reset_password_token()
-    send_mail(
+    send_email(
         _('[Microblog] Reset Your Password'),
         sender=app.config['ADMINS'][0],
         recipients=[user.email],
@@ -28,5 +28,5 @@ def send_email(subject, sender, recipients, text_body, html_body):
     msg = Message(subject, sender=sender, recipients=recipients)
     msg.body = text_body
     msg.html = html_body
-    Thread(target==send_async_email, args=(app, msg)).start()
+    Thread(target=send_async_email, args=(app, msg)).start()
 
