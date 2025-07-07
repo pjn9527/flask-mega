@@ -1,4 +1,4 @@
-from app import app, db
+from app import app, db, mail
 from flask import render_template, flash, redirect, url_for, request, g
 from urllib.parse import urlsplit
 from app.forms import LoginForm, RegistrationForm, EditProfileForm, EmptyForm, PostForm
@@ -317,3 +317,16 @@ def notifications():
         'timestamp': n.timestamp
     } for n in notifications]
 
+
+from flask_mail import Message as MailMessage
+
+@app.route('/test_email')
+def test_email():
+    msg = MailMessage(
+        subject='测试邮件',
+        sender=app.config['MAIL_USERNAME'],
+        recipients=['你的QQ邮箱@qq.com']
+    )
+    msg.body = '这是一个本地测试发送邮件的内容'
+    mail.send(msg)
+    return '邮件已尝试发送 ✅'

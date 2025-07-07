@@ -21,7 +21,8 @@ class Config:
         MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
 
     # 原始代码，上面是修改过 MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None
-    ADMINS = ['your-email@example.com']
+    ADMINS = os.environ.get('ADMINS', '').split(',') if os.environ.get('ADMINS') else []
+
     POSTS_PER_PAGE = 25
     LANGUAGES = ['en','zh']
     BAIDU_APPKEY = os.environ.get('BAIDU_APPKEY')
