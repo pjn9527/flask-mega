@@ -36,8 +36,7 @@ htmlcov/
 **/messages.mo
 
 # 日志文件
-*.log
-debug.log
+logs/
 
 # SQLite & 数据文件
 *.sqlite3
