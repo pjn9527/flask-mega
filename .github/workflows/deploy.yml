@@ -26,7 +26,7 @@ jobs:
 # 登录服务器并部署
       - name: Deploy to server
         run: |
-          ssh -o StrictHostKeyChecking=no youruser@your-server-ip << 'EOF'
+          ssh -o StrictHostKeyChecking=no ubuntu@43.134.70.241 << 'EOF'
             cd ~/your-flask-project
             git pull origin main
             docker compose down
