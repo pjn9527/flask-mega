@@ -27,7 +27,7 @@ jobs:
       - name: Deploy to server
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@43.134.70.241 << 'EOF'
-            cd ~/your-flask-project
+            cd ~/flask-mega
             git pull origin main
             docker compose down
             docker compose up -d
