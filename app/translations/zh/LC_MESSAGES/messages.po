@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-07-08 11:21+0800\n"
+"POT-Creation-Date: 2025-07-08 11:37+0800\n"
 "PO-Revision-Date: 2025-06-29 02:15+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh\n"
@@ -293,6 +293,38 @@ msgstr "取消关注"
 #: app/templates/user.html:33
 msgid "Send private message"
 msgstr "发送私人消息"
+
+#: app/templates/email/reset_password.html:4
+#, fuzzy, python-format
+msgid "Dear %(username)s,"
+msgstr "您好，%(username)s！"
+
+#: app/templates/email/reset_password.html:7
+#, fuzzy
+msgid "To reset your password"
+msgstr "重置密码"
+
+#: app/templates/email/reset_password.html:9
+msgid "click here"
+msgstr "点击此处"
+
+#: app/templates/email/reset_password.html:13
+msgid ""
+"Alternatively, you can paste the following link in your browser's address"
+" bar:"
+msgstr "您亦可复制下方链接至浏览器地址栏："
+
+#: app/templates/email/reset_password.html:15
+msgid "If you have not requested a password reset simply ignore this message."
+msgstr "若非您本人操作，请忽略本邮件。"
+
+#: app/templates/email/reset_password.html:16
+msgid "Sincerely,"
+msgstr "真诚地"
+
+#: app/templates/email/reset_password.html:17
+msgid "Panjiannan"
+msgstr "潘子"
 
 #~ msgid "An export task is currently in progress"
 #~ msgstr "导出任务正在进行中"
