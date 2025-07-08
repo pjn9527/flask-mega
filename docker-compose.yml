@@ -23,6 +23,7 @@ services:
       - .:/app
     env_file:
       - .env
+      - .flaskenv
 
   nginx:
     image: nginx:latest
