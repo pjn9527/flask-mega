@@ -5,7 +5,7 @@
 secrets/
 config/credentials.*
 instance/
-
+.flaskenv
 # Python 缓存 & 发行
 __pycache__/
 *.py[cod]
