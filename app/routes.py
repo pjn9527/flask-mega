@@ -318,15 +318,5 @@ def notifications():
     } for n in notifications]
 
 
-from flask_mail import Message as MailMessage
 
-@app.route('/test_email')
-def test_email():
-    msg = MailMessage(
-        subject='测试邮件',
-        sender=app.config['MAIL_USERNAME'],
-        recipients=['你的QQ邮箱@qq.com']
-    )
-    msg.body = '这是一个本地测试发送邮件的内容'
-    mail.send(msg)
-    return '邮件已尝试发送 ✅'
+
