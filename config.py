@@ -1,8 +1,9 @@
 import os
-basedir = os.path.abspath(os.path.dirname(__file__))
+
 from dotenv import load_dotenv
 load_dotenv()
-
+basedir = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(basedir, '.env'))
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'u will never guess'
     SQLALCHEMY_DATABASE_URI = os .environ.get('DATABASE_URL') or \
@@ -23,4 +24,4 @@ class Config:
     LANGUAGES = ['en','zh']
     BAIDU_APPKEY = os.environ.get('BAIDU_APPKEY')
     BAIDU_APPID = os.environ.get('BAIDU_APPID')
-    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL') or None
